@@ -1,0 +1,26 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: aaaa
+  annotations:
+    blueprints.cloud.google.com/title: 'aaa'
+    cft.dev/base-version: '1'
+    cft.dev/package-version: '1'
+    cft.dev/instance-version: '1'
+upstream:
+  type: git
+  git:
+    repo: https://github.com/adamdoes/demo-policy-blueprints
+    directory: /cis-k8s-1-5-1
+    ref: main
+  updateStrategy: resource-merge
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/adamdoes/demo-policy-blueprints
+    directory: /cis-k8s-1-5-1
+    ref: main
+    commit: dc22ee302680ab05d150c1148c05827b55347b56
+info:
+  description: aaa
+pipeline: {}
